@@ -1,0 +1,99 @@
+Problema 1:
+
+Listar o número do pedido, código do produto e a quantidade pedida dos itens de um pedido, onde a quantidade pedida seja igual a 500.
+
+SELECT 
+    no_ped AS numero_pedido,
+    cd_prod AS codigo_produto,
+    qtd_ped AS quantidade_pedido
+FROM 
+    item_pedido
+WHERE 
+    qtd_ped = 500;
+
+
+Problema 2: 
+
+Quais são os clientes localizados na cidade de Niterói?
+
+SELECT
+    nome_cli as CLIENTE,
+    cidade as CIDADE,
+    uf AS UF
+FROM
+	cliente
+WHERE
+   cidade = 'niteroi';
+
+Problema 3:
+
+Quais são os clientes localizados no estado do Rio de janeiro?
+
+SELECT
+    nome_cli as CLIENTE,
+    cidade as CIDADE,
+     uf AS UF
+FROM
+    cliente
+WHERE
+   uf = 'rj';
+
+Problema 4:
+
+Quais são os produtos que têm unidade igual a 'KG' e valor unitário maior do que R$2.00?
+
+SELECT
+	unid_prod as Unidade,
+	val_unit as Valor_Unitario,
+	desc_prod as produto
+FROM
+	produto
+WHERE
+	unid_prod = 'kg' and
+	val_unit >= 2.00;
+
+Problema 5:
+
+Liste todos os clientes localizados na cidade de São Paulo ou que tenham CEP entre 20000005 e 20000010.
+
+SELECT 
+	nome_cli as CLIENTE,
+	cidade as CIDADE,
+    cep AS CEP
+FROM
+	cliente
+WHERE cidade = 'São Paulo' 
+OR (cep >= '20000005' AND cep <= '20000010');
+
+Problema 6:
+
+Mostrar todos os pedidos que não tenham prazo de entrega superior a 15 dias.
+
+SELECT
+	num_ped,
+	prazo_entr
+FROM
+	pedido
+WHERE
+	prazo_entr >= 15;
+
+Problema 7:
+
+Liste o código e a discrição dos produtos que tenham o valor unitário na faixa de R$0,10 a R$ 3.00
+
+select
+	cod_prod as 'Codigo do Produto',
+	desc_prod as 'Descrição do Produto',
+	val_unit as 'Valor Unitario'
+from
+	produto
+where
+	val_unit >= '0.10' and val_unit <= '3.00';
+
+Problema 8:
+
+Listar todos os produtos que tenham a sua unidade começando por k(lembrese de que a coluna Unid_prod foi definida como char(03))
+
+Problema 9:
+
+Listar todos os vendedores cujos os nome não comecem por "A"
