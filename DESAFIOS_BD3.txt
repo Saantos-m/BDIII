@@ -92,8 +92,14 @@ where
 
 Problema 8:
 
-Listar todos os produtos que tenham a sua unidade começando por k(lembrese de que a coluna Unid_prod foi definida como char(03))
+Listar todos os produtos que tenham a sua unidade começando por k(lembre-se de que a coluna Unid_prod foi definida como char(03))
+
+SELECT * FROM produto
+WHERE unid_prod LIKE 'k%';
 
 Problema 9:
 
 Listar todos os vendedores cujos os nome não comecem por "A"
+
+SELECT * FROM vendedor
+WHERE nome_vend NOT LIKE 'A%';
